@@ -1,0 +1,22 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.container{
+    margin-top: 10%;
+    margin-left: 25% !important; */
+}
+
+.table{
+    width: 70% !important;
+    outline: 2px solid black !important;
+}
+
+.add_a_friend{
+    margin-left: 18% !important;
+}
+
+button{
+    box-shadow: 2px 2px black;
+}

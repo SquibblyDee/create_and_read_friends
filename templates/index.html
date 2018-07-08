@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Friends</title>
+        <!-- linking a css style sheet -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+        <!-- Linking Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- linking a javascript file -->
+        <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}"></script> -->
+    </head>
+    <body>
+        <div class="container">
+            <div class="my_friends">
+                <h1>These are my friends!</h1>
+                <h3 style=color:blue>{{data}}</h3>
+                <table class="table table-striped">
+                    <tr style=background-color:gray>
+                        <td>First Name</td>
+                        <td>Last Name</td>
+                        <td>Occupation</td>
+                    </tr>
+                    {% for row in friends %}
+                        <tr>
+                        {% for d in row %}
+                            <td>{{ row[d] }}</td>
+                        {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </table>
+                <!-- <table class="table"> -->
+                    <!-- <thead> -->
+                        <!-- <tr> -->
+                            <!-- <th scope="col">First</th> -->
+                            <!-- <th scope="col">Last</th> -->
+                            <!-- <th scope="col">Occupation</th> -->
+                        <!-- </tr> -->
+                    <!-- </thead> -->
+                    <!-- <tbody> -->
+                        <!-- <tr> -->
+                            <!-- <td>Mark</td> -->
+                            <!-- <td>Otto</td> -->
+                            <!-- <td>@mdo</td> -->
+                        <!-- </tr> -->
+                        <!-- <tr> -->
+                            <!-- <td>Jacob</td> -->
+                            <!-- <td>Thornton</td> -->
+                            <!-- <td>@fat</td> -->
+                        <!-- </tr> -->
+                        <!-- <tr> -->
+                            <!-- <td>Larry</td> -->
+                            <!-- <td>the Bird</td> -->
+                            <!-- <td>@twitter</td> -->
+                        <!-- </tr> -->
+                    <!-- </tbody> -->
+                <!-- </table> -->
+            </div>
+            <div class="add_a_friend">
+                <h1>Add a friend</h1>
+                <form action='/create_friend' method='post'>
+                    <div class="form-row">
+                        <div class="col-4">
+                            <input type="text" class="form-control" name="first_name" placeholder="Dale">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-4">
+                            <input type="text" class="form-control" name="last_name" placeholder="Gribble">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-4">
+                            <input type="text" class="form-control" name="occupation" placeholder="Exterminator">
+                        </div>
+                    </div>
+                    <button type="submit" name="submit" class="btn btn-primary">Add</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
