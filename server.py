@@ -11,7 +11,7 @@ mysql = connectToMySQL('friendsdb')
 @app.route('/')
 def index():
     all_friends = mysql.query_db("SELECT first_name, last_name, occupation FROM friends")
-    print("Fetched all friends", all_friends, "\n")
+    # print("Fetched all friends", all_friends, "\n")
     return render_template('index.html', friends = all_friends)
 
 @app.route('/create_friend', methods=['POST'])

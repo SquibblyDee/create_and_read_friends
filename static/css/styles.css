@@ -1,6 +1,7 @@
 *{
     margin: 0px;
     padding: 0px;
+    /* outline: 1px solid red; */
 }
 
 .container{
@@ -14,9 +15,14 @@
 }
 
 .add_a_friend{
-    margin-left: 18% !important;
+    /* margin-left: 18% !important; */
+    margin-top: 3% !important;
 }
 
 button{
     box-shadow: 2px 2px black;
+    margin: 1% 10% 0% 43% !important;
+}
+ul{
+    color: black !important;
 }
